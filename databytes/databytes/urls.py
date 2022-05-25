@@ -20,5 +20,7 @@ from DBweb import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('admin/', admin.site.urls),
+    path('index', views.index, name='index'),
+    path('careers', views.careers, name='careers'),
+    path('admin', admin.site.urls),
 ]

@@ -44,7 +44,7 @@
 
       <!-- <a href="index.html" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a> -->
       <!-- Uncomment below if you prefer to use text as a logo -->
-      <h1 class="logo"><a href="index.html">DataBytes</a></h1>
+      <h1 class="logo"><a href="">DataBytes</a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -344,34 +344,18 @@
         </div>
 
         <div class="row">
+          {% block projects %}
+          {% for project in projectList %}
           <div class="col-lg-4 col-md-6">
             <div class="card">
-              <h4 class="title">Discount Mate</h4>
-              <p>Software Engineering</p>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
+              <h4 class="title">{{ project.ProjectName }}</h4>
+              <p>{{ project.ProjectDescription }}</p>
+              <a href="projects">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-          
-          <div class="col-lg-4 col-md-6">
-            <div class="card">
-              <h4 class="title">Dam Analysis and Monitoring</h4>
-              <p>Software Engineering</p>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          
-
-          <div class="col-lg-4 col-md-12">
-            <div class="card">
-              <h4 class="title">Financial Portfolio</h4>
-              <p>Software Engineering</p>
-              <p>Software Engineering</p>
-              <p>Software Engineering</p>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          
-          <div class="btn"><a href="careers.html">View All <i class="bi bi-arrow-right"></i></a></div>
+          {% endfor %}
+          {% endblock %}
+          <div class="btn"><a href="projects">View All <i class="bi bi-arrow-right"></i></a></div>
         </div>
 
         
@@ -392,39 +376,19 @@
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          {% block jobs %}
+          {% for job in jobList %}
+          <div class="col-lg-4 col-md-6">
             <div class="card">
-              <p class="tag">Software Engineering</p>
-              <h4 class="title">Front-end Developer</h4>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
+              <p class="tag">{{ job.JobCategory }}</p>
+              <h4 class="title">{{ job.JobName }}</h4>
+              <a href="projects">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
+          {% endfor %}
+          {% endblock %}
 
-          <div class="col-lg-3 col-md-6">
-            <div class="card">
-              <p class="tag">Software Engineering</p>
-              <h4 class="title">Back-end Developer</h4>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="card">
-              <p class="tag">Data Science</p>
-              <h4 class="title">Data Engineer</h4>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="card">
-              <p class="tag">Data Science</p>
-              <h4 class="title">Data Scientist</h4>
-              <a href="careers.html">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="btn"><a href="careers.html">View All <i class="bi bi-arrow-right"></i></a></div>
+          <div class="btn"><a href="careers">View All <i class="bi bi-arrow-right"></i></a></div>
         </div>
 
       </div>
@@ -605,7 +569,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="careers.html">Careers</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="careers">Careers</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="projects.html">Projects</a></li>
             </ul>
           </div>
