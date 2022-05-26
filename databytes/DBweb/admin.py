@@ -4,3 +4,4 @@ from .models import *
 # Admin Manage Records
 admin.site.register(Job)
 admin.site.register(Project)
+admin.site.register(Testimony)
