@@ -16,6 +16,7 @@ class Job (md.Model):
     JobName = md.CharField(max_length=64)
     JobDescription = md.TextField(max_length=1024)
     JobCategory = md.CharField(max_length=64, default='')
+    JobTitle = md.CharField(max_length=64, default='')
     PubDate = md.DateTimeField()
     ProjectID = md.ForeignKey(Project, on_delete=md.CASCADE, blank=True, null=True)
 

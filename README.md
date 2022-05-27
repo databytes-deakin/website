@@ -3,7 +3,7 @@
 
 ## Foundations
 ### Requirements
-* Python3
+* Python v3.8 (or newer)
 * Django v4.04 (or newer)
 
 ### Installation 

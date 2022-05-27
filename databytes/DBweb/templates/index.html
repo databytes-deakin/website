@@ -54,6 +54,7 @@
           <li><a class="nav-link scrollto " href="#projects">Projects</a></li>
           <li><a class="nav-link scrollto" href="#careers">Careers</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="admin">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -93,7 +94,7 @@
 
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h3>About Us</h3>
+            <h2>ABOUT US</h2>
             <p>At DataBytes, we aim to harness the potential of Artificial Intelligence and Data Science by building
               software products for social good. We give data value, converting it from computer language to human
               language. </p>
@@ -130,7 +131,7 @@
       <div class="container">
 
         <div class="text-center title">
-          <h3>What we have achieved so far</h3>
+          <h2>What we have achieved so far</h2>
           <p>DataBytes is constantly evolving. Be a part of something big!</p>
         </div>
 
@@ -292,7 +293,7 @@
         <div class="row">
           {% block projects %}
           {% for project in projectList %}
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="card">
               <h4 class="title">{{ project.ProjectName }}</h4>
               <p>{{ project.ProjectDescription }}</p>
