@@ -15,6 +15,4 @@ COPY . .
 EXPOSE 800
 
 COPY ${DIRECTORY} ./
-RUN python manage.py migrate
-RUN python manage.py makemigrations
-CMD ["python manage.py runserver 800"]
+CMD ["python manage.py migrate", "python manage.py makemigrations", "python manage.py runserver 800"]
