@@ -15,6 +15,6 @@
    - '--image'
    - 'gcr.io/$PROJECT_ID/db-website:$COMMIT_SHA'
    - '--region'
-   - 'australia-southeast2	'
+   - 'australia-southeast2'
  images:
  - 'gcr.io/$PROJECT_ID/db-website:$COMMIT_SHA'
