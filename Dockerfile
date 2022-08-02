@@ -13,7 +13,7 @@ RUN pip install django
 COPY . .
 
 
-EXPOSE ${PORT}
+EXPOSE 8080
 
 COPY ${DIRECTORY} ./
 RUN python manage.py migrate
