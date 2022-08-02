@@ -12,9 +12,9 @@ RUN pip install django
 COPY . .
 
 
-EXPOSE 8080
+EXPOSE 800
 
 COPY ${DIRECTORY} ./
 RUN python manage.py migrate
 RUN python manage.py makemigrations
-CMD ["python manage.py runserver 8080"]
+CMD ["python manage.py runserver 800"]
