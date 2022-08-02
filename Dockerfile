@@ -1,7 +1,6 @@
 FROM python:3.9
 
 ENV DIRECTORY=/databytes
-ENV PORT=8080
 
 WORKDIR ${DIRECTORY}
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -13,7 +12,7 @@ RUN pip install django
 COPY . .
 
 
-EXPOSE 8080
+EXPOSE $PORT
 
 COPY ${DIRECTORY} ./
 RUN python manage.py migrate
