@@ -1,17 +1,18 @@
 FROM python:3.9
 
-ENV workDIRECTORY=/databytes
+ENV DIRECTORY=/databytes
 
-WORKDIR $workDIRECTORY
+WORKDIR ${DIRECTORY}
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1 
 
 RUN pip install --upgrade pip
+RUN pip install django
 
-COPY $workDIRECTORY
-RUN pip install -r requirements.txt
-EXPOSE 8080
+COPY . .
 
-CMD python manage.py migrate
-CMD python manage.py makemigrations
-CMD python manage.py runserver 8080
+
+EXPOSE 800
+
+COPY ${DIRECTORY} ./
+CMD ["python manage.py runserver 800"]
