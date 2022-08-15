@@ -8,6 +8,7 @@ class Project (md.Model):
     ProjectDescription = md.TextField(max_length=2048)
     ProjectLeader = md.CharField(max_length=64)
     LeaderEmail = md.EmailField(max_length=64)
+    ProjectStartDate = md.DateField(null=True)
 
 class Job (md.Model):
     def __str__(self):
