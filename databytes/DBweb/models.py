@@ -5,9 +5,12 @@ class Project (md.Model):
         return self.ProjectName
     ProjectID = md.BigAutoField(primary_key=True)
     ProjectName = md.CharField(max_length=64)
-    ProjectDescription = md.TextField(max_length=2048)
-    ProjectLeader = md.CharField(max_length=64)
-    LeaderEmail = md.EmailField(max_length=64)
+    ProjectDescription = md.TextField(max_length=2048, null=True)
+    ProjectLeader = md.CharField(max_length=64, null=True)
+    LeaderEmail = md.EmailField(max_length=64, null=True)
+    ProjectStartDate = md.DateTimeField(null=True)
+    ProjectEndDate = md.DateTimeField(null=True)
+    ProjectIsActive = md.BooleanField(default=True, null=True)
 
 class Job (md.Model):
     def __str__(self):
