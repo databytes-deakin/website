@@ -581,7 +581,7 @@ section {
 }
 .clients .client-logo:hover a {
   filter: none;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .clients img {
   transition: all 0.4s ease-in-out;
