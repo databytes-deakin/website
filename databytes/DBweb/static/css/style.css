@@ -108,16 +108,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: 'Roboto Slab', serif;
-  font-size: 15px;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
   color: #0f394c;
   white-space: nowrap;
   transition: 0.3s;
   text-transform: uppercase;
 }
 .navbar a i, .navbar a:focus i {
-  font-size: 12px;
+  font-size: 1em;
   line-height: 0;
   margin-left: 5px;
 }
@@ -291,12 +291,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero .btn-get-started {
   font-family: 'Roboto Slab', serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 28px;
-  border-radius: 3px;
+  border-radius: 4px;
   transition: 0.5s;
   margin-top: 25px;
   color: #fff;
@@ -361,6 +361,12 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .about .icon-boxes h3 {
   font-size: 28px;
   font-weight: 700;
@@ -534,6 +540,9 @@ section {
   color: #0f394c;
   margin-bottom: 40px;
 }
+.counts h2 {
+  font-weight: 700;
+}
 .counts .title h3 {
   font-size: 36px;
   font-weight: 700;
@@ -636,14 +645,29 @@ section {
 # projects
 --------------------------------------------------------------*/
 .projects {
-  margin-bottom: 30px;
+  background-color: #F4FBFE;
+}
+
+.projects .title {
+  font-weight: 700;
+  margin-bottom: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.projects p {
+  margin-bottom: 0;
 }
 
 .projects .card {
   padding: 24px;
-  border: solid 2px #49b5e7;
-  border-radius: 8px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
   height: 100%;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
 }
 
 .projects .btn {

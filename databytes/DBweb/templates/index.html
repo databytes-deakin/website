@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DataBytes - Home</title>
+  <title>Home | DataBytes</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -93,7 +93,7 @@
 
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h2>ABOUT US</h2>
+            <h2>About Us</h2>
             <p>At DataBytes, we aim to harness the potential of Artificial Intelligence and Data Science by building
               software products for social good. We give data value, converting it from computer language to human
               language. </p>
@@ -124,6 +124,66 @@
 
       </div>
     </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>DataBytes offers technology platforms, software applications and systems</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-eye" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">Computer Vision</a></h4>
+              <p class="description">Using artificial intelligence algorithms to identify key objects or patterns</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-volume-up" style="color: #e9bf06;"></i></div>
+              <h4 class="title"><a href="">Audio Recognition</a></h4>
+              <p class="description">Applying natural language processing techniques to analyse audio samples</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-credit-card" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="">Financial Risk Management</a></h4>
+              <p class="description">Minimising potential risks through data analysis and accurate predictions</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-gear" style="color:#41cf2e;"></i></div>
+              <h4 class="title"><a href="">Operation Optimisation</a></h4>
+              <p class="description">Improving efficiency in daily operations by employing artificial intelligence</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-graph-up-arrow" style="color: #932d9c;"></i></div>
+              <h4 class="title"><a href="">Prediction Analysis</a></h4>
+              <p class="description">Using machine learning to analyse historical data and output a prediction</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-cloud" style="color: #4680ff;"></i></div>
+              <h4 class="title"><a href="">Blockchain Engineering</a></h4>
+              <p class="description">Applying machine learning processes to manage blockchain and cloud applications</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
@@ -188,65 +248,31 @@
       </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <!-- ======= Projects Section ======= -->
+    <section id="projects" class="projects">
       <div class="container">
 
         <div class="section-title">
-          <h2>Our Services</h2>
-          <p>DataBytes offers technology platforms, software applications and systems</p>
+          <h2>Featured Projects</h2>
+          <p>We are especially delighted to introduce a range of innovative projects that Databytes team is developing.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-eye" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Computer Vision</a></h4>
-              <p class="description">Using artificial intelligence algorithms to identify key objects or patterns</p>
+          {% block projects %}
+          {% for project in projectList %}
+          <div class="col-lg-3 col-md-6">
+            <div class="card">
+              <h4 class="title">{{ project.ProjectName }}</h4>
+              <p>{{ project.ProjectShortDescription }}</p>
+              <a href="projects/">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-volume-up" style="color: #e9bf06;"></i></div>
-              <h4 class="title"><a href="">Audio Recognition</a></h4>
-              <p class="description">Applying natural language processing techniques to analyse audio samples</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-credit-card" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Financial Risk Management</a></h4>
-              <p class="description">Minimising potential risks through data analysis and accurate predictions</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-gear" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Operation Optimisation</a></h4>
-              <p class="description">Improving efficiency in daily operations by employing artificial intelligence</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-graph-up-arrow" style="color: #932d9c;"></i></div>
-              <h4 class="title"><a href="">Prediction Analysis</a></h4>
-              <p class="description">Using machine learning to analyse historical data and output a prediction</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-cloud" style="color: #4680ff;"></i></div>
-              <h4 class="title"><a href="">Blockchain Engineering</a></h4>
-              <p class="description">Applying machine learning processes to manage blockchain and cloud applications</p>
-            </div>
-          </div>
+          {% endfor %}
+          {% endblock %}
+          <div class="btn"><a href="projects">View All <i class="bi bi-arrow-right"></i></a></div>
         </div>
-
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End projects Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -277,35 +303,6 @@
 
       </div>
     </section><!-- End Testimonials Section -->
-
-    <!-- ======= Projects Section ======= -->
-    <section id="projects" class="projects">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Featured Projects</h2>
-          <p>We are especially delighted to introduce a range of innovative projects that Databytes team is developing.</p>
-        </div>
-
-        <div class="row">
-          {% block projects %}
-          {% for project in projectList %}
-          <div class="col-lg-3 col-md-6">
-            <div class="card">
-              <h4 class="title">{{ project.ProjectName }}</h4>
-              <p>{{ project.ProjectDescription }}</p>
-              <a href="projects">Learn More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          {% endfor %}
-          {% endblock %}
-          <div class="btn"><a href="projects">View All <i class="bi bi-arrow-right"></i></a></div>
-        </div>
-
-
-
-      </div>
-    </section><!-- End projects Section -->
 
     <!-- ======= Careers Section ======= -->
     <section id="careers" class="careers section-bg">
@@ -488,7 +485,7 @@
             <h4>Join Our Newsletter</h4>
             <p>Keep up to date with all of the latest DataBytes news</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email" placeholder="username@deakin.edu.au"><input type="submit" value="Subscribe">
             </form>
           </div>
         </div>
@@ -543,7 +540,7 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>DataBytes</span></strong>. All Rights Reserved
+        <p><strong>DataBytes</strong> &copy; Copyright {% now 'Y' %}. All Rights Reserved</p>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

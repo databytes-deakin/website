@@ -5,19 +5,14 @@ class Project (md.Model):
         return self.ProjectName
     ProjectID = md.BigAutoField(primary_key=True)
     ProjectName = md.CharField(max_length=64)
-<<<<<<< HEAD
+    ProjectShortDescription = md.TextField(max_length=128, null=True)
     ProjectDescription = md.TextField(max_length=2048, null=True)
     ProjectLeader = md.CharField(max_length=64, null=True)
     LeaderEmail = md.EmailField(max_length=64, null=True)
-    ProjectStartDate = md.DateTimeField(null=True)
-    ProjectEndDate = md.DateTimeField(null=True)
-    ProjectIsActive = md.BooleanField(default=True, null=True)
-=======
-    ProjectDescription = md.TextField(max_length=2048)
-    ProjectLeader = md.CharField(max_length=64)
-    LeaderEmail = md.EmailField(max_length=64)
     ProjectStartDate = md.DateField(null=True)
->>>>>>> aac617a9dece9c7bbfe57160de41e0defcb28b15
+    ProjectEndDate = md.DateField(null=True)
+    ProjectIsActive = md.BooleanField(default=True, null=True)
+    ProjectIsFeatured = md.BooleanField(default=True, null=True)
 
 class Job (md.Model):
     def __str__(self):
@@ -26,8 +21,6 @@ class Job (md.Model):
     JobName = md.CharField(max_length=64)
     JobDescription = md.TextField(max_length=1024)
     JobCategory = md.CharField(max_length=64, default='')
-    JobTitle = md.CharField(max_length=64, default='')
-    PubDate = md.DateTimeField()
     ProjectID = md.ForeignKey(Project, on_delete=md.CASCADE, blank=True, null=True)
 
 class Testimony (md.Model):
