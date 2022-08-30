@@ -23,13 +23,13 @@ def projects(request):
     context = {'projectList': projectList}
     return render(request, template, context)
 
-def project(request):
-    project = Project.objects.all()
+def project(request, ProjectURL):
+    project = Project.objects.filter(ProjectURL = ProjectURL).values()
     template = 'project-details.html'
     context = {'project': project}
     return render(request, template, context)
 
-def projectDetails(request):
+def projectDetails(request): # TEMPORARY FILE
     projectDetails = Project.objects.all()
     template = 'project-details.html'
     context = {'project': projectDetails}
