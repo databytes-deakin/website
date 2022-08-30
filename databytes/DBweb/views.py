@@ -22,3 +22,13 @@ def projects(request):
     template = 'projects.html'
     context = {'projectList': projectList}
     return render(request, template, context)
+
+def project(request):
+    template = 'project-details.html'
+    context = {'project': project}
+    return render(request, template, context)
+
+def projectDetails(request):
+    template = 'project-details.html'
+    context = {'project': project}
+    return render(request, template, context)
