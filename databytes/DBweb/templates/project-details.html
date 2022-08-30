@@ -60,7 +60,8 @@
 
     </div>
   </header><!-- End Header -->
-
+  {% block project %}
+  {% for i in project %}
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -68,11 +69,11 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
+          <h2>{{i.ProjectName}}</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li>Portfolio Details</li>
+            <li>{{i.ProjectName}}</li>
           </ol>
         </div>
 
@@ -85,16 +86,21 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
+          <div class="col-lg-12">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-1.jpg" alt="">
+                  {% if i.ProjectIsActive == True %}
+                    {% with i as project %}
+                  <img src="../static/img/{{i.ProjectID}}.jpeg" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
+                  <!-- <img src="https://assets.entrepreneur.com/content/3x2/2000/20180703190744-rollsafe-meme.jpeg" alt="" width="100%" style="height:300px; object-fit: cover;"> -->
+                    {% endwith %}
+                  {% endif %}
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-2.jpg" alt="">
+                  <img src="https://www.techtarget.com/rms/onlineimages/code_g1019737194_searchsitetablet_520X173.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
@@ -105,30 +111,43 @@
               <div class="swiper-pagination"></div>
             </div>
           </div>
-
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-2"></div> -->
+          <div class="col-lg-12">
             <div class="portfolio-info">
-              <h2>Project information</h2>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+              
+              {% if i.ProjectIsActive == True %}
+                    {% with i as project %}
+                <h2>Project information</h2>
+                <ul>
+                  <li><strong>Category</strong>: {{i.ProjectName}}</li>
+                  <li><strong>Client</strong>: {{i.ProjectLeader}}</li>
+                  <li><strong>Client Email</strong>: {{i.LeaderEmail}}</li>
+                  <li><strong>Project start date</strong>: {{i.ProjectStartDate}}</li>
+                  {% if i.ProjectEndDate == '' %}
+                    {% with i as project %}
+                      <li><strong>Project end date</strong>: {{i.ProjectEndDate}}</li>
+                    {% endwith %}
+                  {% endif %}
+                  <li><strong>Project URL</strong>: <a href="#"> {{i.ProjectURL}}</a></li>
+                </ul>
+              
             </div>
             <div class="portfolio-description">
-              <h3>This is an example of portfolio detail</h3>
+              <h3> {{i.ProjectName}} Description</h3>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {{i.ProjectDescription}}
               </p>
             </div>
+              {% endwith %}
+            {% endif %}
           </div>
 
         </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
-
+    {% endfor %}
+    {% endblock %}
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
