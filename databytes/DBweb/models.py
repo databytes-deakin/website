@@ -13,7 +13,7 @@ class Project (md.Model):
     ProjectEndDate = md.DateField(null=True)
     ProjectIsActive = md.BooleanField(default=True, null=True)
     ProjectIsFeatured = md.BooleanField(default=True, null=True)
-    ProjectURL = md.CharField(max_length=64, default=ProjectName)
+    ProjectURL = md.CharField(max_length=64, default=ProjectName) # VALIDATOR
 
 class Job (md.Model):
     def __str__(self):

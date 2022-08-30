@@ -22,3 +22,15 @@ def projects(request):
     template = 'projects.html'
     context = {'projectList': projectList}
     return render(request, template, context)
+
+def project(request):
+    project = Project.objects.all()
+    template = 'project-details.html'
+    context = {'project': project}
+    return render(request, template, context)
+
+def projectDetails(request):
+    projectDetails = Project.objects.all()
+    template = 'project-details.html'
+    context = {'project': projectDetails}
+    return render(request, template, context)

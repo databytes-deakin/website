@@ -23,5 +23,7 @@ urlpatterns = [
     path('index', views.index, name='index'),
     path('careers', views.careers, name='careers'),
     path('projects', views.projects, name='projects'),
-    path('admin', admin.site.urls),
+    path('projects/<str:project>', views.project, name='project'),
+    path('project-details', views.projectDetails, name='projectDetails'),
+    path('admin', admin.site.urls)
 ]
