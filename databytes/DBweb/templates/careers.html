@@ -40,11 +40,21 @@
           {% for i in jobList %}
 
               {% with i as jobList %}
-            <div class="col-lg-4 col-md-6">
-              <div class="icon-box" style="background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}">
+            <!-- <div class="col-lg-4 col-md-6">
+              <div class="icon-box" style="background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}"> -->
                 <!-- <div class="icon"><i class="bi bi-window-sidebar" style="color: #2db942;"></i></div> -->
-                <h4 class="title"><a href="/careers/{{i.JobURL}}">{{i.JobName}}</a></h4>
+                <!-- <h4 class="title"><a href="/careers/{{i.JobURL}}">{{i.JobName}}</a></h4>
                 <p class="description" style="white-space: pre-line;">{{i.JobDescription}}</p>
+              </div>
+            </div> -->
+
+            <div class="col-lg-3 col-md-6" >
+              <div class="card bg-light mb-4" style="max-width: 18rem;">
+                <div class="card-header" style="  background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}"><h5 class="card-title"><a  href="/careers/{{i.JobURL}}">{{i.JobName}}</a></h5></div>
+                <div class="card-body">
+                  
+                  <p class="card-text">{{i.JobDescription}}</p>
+                </div>
               </div>
             </div>
 
@@ -52,8 +62,8 @@
           {% endfor %}
         {% endblock %}
        </div>
-
       </div>
+      <!-- </div> -->
     </section><!-- End Services Section -->
 
   </main><!-- End #main -->

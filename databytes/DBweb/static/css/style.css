@@ -1204,3 +1204,15 @@ section {
     text-align: center;
   }
 }
+
+.card-title a {
+  color: #0f394c !important;
+}
+
+.card-title a:hover {
+  color: #49b5e7 !important;
+}
+
+.card-text {
+  white-space: pre-line !important;
+}
