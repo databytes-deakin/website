@@ -8,30 +8,8 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <!-- <a href="index" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a> -->
-      <!-- Uncomment below if you prefer to use text as a logo -->
-      <h1 class="logo"><a href="index">DataBytes</a></h1>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link" href="index">Home</a></li>
-          <li><a class="nav-link" href="index#about">About</a></li>
-          <li><a class="nav-link" href="index#services">Services</a></li>
-          <li><a class="nav-link" href="projects">Projects</a></li>
-          <li><a class="nav-link active" href="">Careers</a></li>
-          <li><a class="nav-link" href="index#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
+  {% include 'navigation.html' %}
+  
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -41,7 +19,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Careers</h2>
           <ol>
-            <li><a href="index">Home</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
             <li>Careers</li>
           </ol>
         </div>
@@ -58,54 +36,22 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-window-sidebar" style="color: #2db942;"></i></div>
-              <h4 class="title"><a href="">Front-end developer</a></h4>
-              <p class="description">In this role, you will be responsible for developing, implementing user interface, styling the UI components and enhancing front-end performance. </p>
-            </div>
-          </div>
+          {% block jobList %}
+          {% for i in jobList %}
 
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-hdd-stack" style="color: #069de9;"></i></div>
-              <h4 class="title"><a href="">Back-end developer</a></h4>
-              <p class="description">As a back-end developer, you will be responsible for building, deploying and maintaining back-end solutions.</p>
+              {% with i as jobList %}
+            <div class="col-lg-4 col-md-6">
+              <div class="icon-box" style="background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}">
+                <!-- <div class="icon"><i class="bi bi-window-sidebar" style="color: #2db942;"></i></div> -->
+                <h4 class="title"><a href="/careers/{{i.JobURL}}">{{i.JobName}}</a></h4>
+                <p class="description" style="white-space: pre-line;">{{i.JobDescription}}</p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-graph-up" style="color: #835cf6;"></i></div>
-              <h4 class="title"><a href="">Data Engineer</a></h4>
-              <p class="description">As a data engineer, you will be responsible for ensuring reliable data and protecting the privacy and security of users' data.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-code-slash" style="color:#f8ba1e;"></i></div>
-              <h4 class="title"><a href="">Data Scientist</a></h4>
-              <p class="description">In this role, you will be responsible for analysing data, identifying the potential use cases and building predictive models.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-clipboard-data" style="color: #ff66d6;"></i></div>
-              <h4 class="title"><a href="">Research Scientist</a></h4>
-              <p class="description">As a reseach scientist, you will be responsible for investigating and developing new approaches to computing technology and find innovative solutions for computing problems.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-megaphone" style="color: #ec3737;"></i></div>
-              <h4 class="title"><a href="">Project Lead (Senior)</a></h4>
-              <p class="description">As a project leader, you will be responsible for defining project scope, planning project, assigning tasks, managing project progress and implement project.</p>
-            </div>
-          </div>
-        </div>
+          {% endwith %}
+          {% endfor %}
+        {% endblock %}
+       </div>
 
       </div>
     </section><!-- End Services Section -->
