@@ -1216,3 +1216,11 @@ section {
 .card-text {
   white-space: pre-line !important;
 }
+.cards {
+  box-shadow: 0 10px 29px 0 rgb(68 88 144 / 10%) !important;
+  transition: all 0.3s ease-in-out !important;
+  min-height: 300px;
+}
+.cards:hover {
+  transform: translateY(-5px);
+}
