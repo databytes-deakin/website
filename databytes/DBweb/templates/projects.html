@@ -7,29 +7,7 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <!-- <a href="index" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a> -->
-      <!-- Uncomment below if you prefer to use text as a logo -->
-      <h1 class="logo"><a href="index">DataBytes</a></h1>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link" href="index">Home</a></li>
-          <li><a class="nav-link" href="index#about">About</a></li>
-          <li><a class="nav-link" href="index#services">Services</a></li>
-          <li><a class="nav-link active" href="">Projects</a></li>
-          <li><a class="nav-link" href="careers">Careers</a></li>
-          <li><a class="nav-link" href="index#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+  {% include 'navigation.html' %}
 
   <main id="main">
 
@@ -55,39 +33,31 @@
           <h2>All Projects</h2>
           <p>We are especially delighted to introduce a range of innovative projects that Databytes team is developing.</p>
         </div>
+          <div class="row">
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-window-sidebar" style="color: #2db942;"></i></div>
-              <h4 class="title"><a href="">Databytes Website</a></h4>
-              <p class="description">Datebytes website is an online platform to introduce about company mission and company activities. Aside from that website is a place to promote plenty of featured project developed by Databytes team as well as recruit new junior students.</p>
-            </div>
-          </div>
+          {% block projectList %}
+            {% for i in projectList %}
 
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-hdd-stack" style="color: #069de9;"></i></div>
-              <h4 class="title"><a href="">DiscountMate</a></h4>
-              <p class="description">DiscountMate is designed to assit consumers(households) save hundreds of dollars in their groccery shopping by allowing customers to access discount information from various retailers. Thus, the application can help customers buy their desired products with lowest price.</p>
-            </div>
-          </div>
+              {% with i as projectList %}
+                  <div class="col-lg-3 col-md-6 ">
+                    <div class="card bg-light mb-4 cards" style="max-width: 18rem;">
+                      <div class="card-header" style="  background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}"><h5 class="card-title"><a  href="/projects/{{i.ProjectURL}}">{{i.ProjectName}}</a></h5></div>
+                      <div class="card-body">
+                        
+                        <p class="card-text">{{i.ProjectDescription}}</p>
+                      </div>
+                    </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-graph-up" style="color: #835cf6;"></i></div>
-              <h4 class="title"><a href="">LMS Moodle</a></h4>
-              <p class="description">Moodle is a solution for learning management system which Databytes is using as base platform to invest and develop more effective features to suit a new trend of studying.</p>
-            </div>
-          </div>
+                    <!-- <div class="icon-box" style="background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}"> -->
+                      <!-- <div class="icon"><i class="bi bi-window-sidebar" style="color: #2db942;"></i></div> -->
+                      <!-- <h4 class="title"><a href="/projects/{{i.ProjectURL}}">{{i.ProjectName}}</a></h4>
+                      <p class="description">{{i.ProjectDescription}}</p>
+                    </div> -->
+                  </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-megaphone" style="color: #ec3737;"></i></div>
-              <h4 class="title"><a href="">DAM</a></h4>
-              <p class="description">The mission of this project is to create web application platform which support customers to identify a map of being water area or land area.</p>
-            </div>
-          </div>
+              {% endwith %}
+            {% endfor %}
+          {% endblock %}
         </div>
 
       </div>

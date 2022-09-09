@@ -24,6 +24,8 @@ urlpatterns = [
     path('careers', views.careers, name='careers'),
     path('projects', views.projects, name='projects'),
     path('projects/<str:ProjectURL>', views.project, name='project'),
+    path('careers/<str:JobURL>', views.career, name='career'),
     path('project-details', views.projectDetails, name='projectDetails'),
+    path('career-details', views.jobDetails, name='jobDetails'),
     path('admin', admin.site.urls)
 ]

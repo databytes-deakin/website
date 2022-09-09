@@ -14,6 +14,7 @@ class Project (md.Model):
     ProjectIsActive = md.BooleanField(default=True, null=True)
     ProjectIsFeatured = md.BooleanField(default=True, null=True)
     ProjectURL = md.CharField(max_length=64, default=ProjectName) # VALIDATOR
+    ProjectImage = md.CharField(max_length=64, null=True) # VALIDATOR
 
 class Job (md.Model):
     def __str__(self):
@@ -23,6 +24,8 @@ class Job (md.Model):
     JobDescription = md.TextField(max_length=1024)
     JobCategory = md.CharField(max_length=64, default='')
     ProjectID = md.ForeignKey(Project, on_delete=md.CASCADE, blank=True, null=True)
+    JobURL = md.CharField(max_length=64, default=JobName) # VALIDATOR
+
 
 class Testimony (md.Model):
     def __str__(self):

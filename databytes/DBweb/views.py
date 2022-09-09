@@ -17,6 +17,18 @@ def careers(request):
     context = {'jobList': jobList}
     return render(request, template, context)
 
+def career(request, JobURL):
+    job = Job.objects.filter(JobURL = JobURL).values()
+    template = 'career-details.html'
+    context = {'job': job}
+    return render(request, template, context)
+
+def jobDetails(request): # TEMPORARY FILE
+    jobDetails = Job.objects.all()
+    template = 'career-details.html'
+    context = {'job': jobDetails}
+    return render(request, template, context)
+
 def projects(request):
     projectList = Project.objects.all()
     template = 'projects.html'

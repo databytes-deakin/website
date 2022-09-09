@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>{{ object.ProjectName }} | DataBytes</title>
+    <title>{{ object.JobName }} | DataBytes</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
   
@@ -39,8 +39,8 @@
 <body>
   {% include 'navigation.html' %}
   
-  {% block project %}
-  {% for i in project %}
+  {% block job %}
+  {% for i in job %}
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -48,11 +48,11 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>{{i.ProjectName}}</h2>
+          <h2>{{i.JobName}}</h2>
           <ol>
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li>{{i.ProjectName}}</li>
+            <li><a href="{% url 'careers' %}">Careers</a></li>
+            <li>{{i.JobName}}</li>
           </ol>
         </div>
 
@@ -70,20 +70,9 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  {% if i.ProjectIsActive == True %}
-                    {% with i as project %}
-                      {% if i.ProjectImage is not None %}
-                        {% with p as proj %}
-                          <img src="../static/img/{{i.ProjectImage}}" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
-                          {% endwith %}
-                        
-                        {% else %}
-                          {% with p.parent as proj %}
-                            <img src="../static/img/tech_0{{i.ProjectID}}.jpg" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
-                          {% endwith %}
-                        {% endif %}
+                      {% with i as job %}
+                            <img src="../static/img/work_0{{i.JobID}}.jpg" alt="{{i.JobName}}" width="100%" style="height:300px; object-fit: cover;">
                       {% endwith %}
-                  {% endif %}
                 </div>
 
                 <div class="swiper-slide">
@@ -102,31 +91,22 @@
           <div class="col-lg-12">
             <div class="portfolio-info">
               
-              {% if i.ProjectIsActive == True %}
-                    {% with i as project %}
-                <h2>Project information</h2>
+
+                <h2>Job information</h2>
                 <ul>
-                  <li><strong>Category</strong>: {{i.ProjectName}}</li>
-                  <li><strong>Client</strong>: {{i.ProjectLeader}}</li>
-                  <li><strong>Client Email</strong>: {{i.LeaderEmail}}</li>
-                  <li><strong>Project start date</strong>: {{i.ProjectStartDate}}</li>
-                  {% if i.ProjectEndDate == '' %}
-                    {% with i as project %}
-                      <li><strong>Project end date</strong>: {{i.ProjectEndDate}}</li>
-                    {% endwith %}
-                  {% endif %}
-                  <li><strong>Project URL</strong>: <a href="#"> {{i.ProjectURL}}</a></li>
+                  <li><strong>Job</strong>: {{i.JobName}}</li>
+                  <li><strong>Category</strong>: {{i.JobCategory}}</li>
+                  <li><strong>Job URL</strong>: <a href="#"> {{i.JobURL}}</a></li>
                 </ul>
               
             </div>
             <div class="portfolio-description">
-              <h3> {{i.ProjectName}} Description</h3>
-              <p>
-                {{i.ProjectDescription}}
+              <h3> {{i.JobName}} Description</h3>
+              <p  style="white-space: pre-line;">
+                {{i.JobDescription}}
               </p>
             </div>
-              {% endwith %}
-            {% endif %}
+
           </div>
 
         </div>
