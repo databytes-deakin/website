@@ -1198,12 +1198,62 @@ section {
   font-size: 13px;
   color: #0f394c;
 }
+
+
+
+
 @media (max-width: 575px) {
   #footer .copyright, #footer .credits {
     float: none;
     text-align: center;
   }
+
+  .footer-contact, .footer-links {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  #footer .footer-top .social-links a {
+    width: 30px;
+    height: 30px;
+  }
 }
+
+@media (max-width: 420px) {
+  .footer-contact, .footer-links {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #footer .footer-top .social-links a {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 419px) {
+  .footer-contact, .footer-links {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #footer .footer-top .social-links a {
+    width: 30px;
+    height: 30px;
+  }
+
+  i.bx.bx-chevron-right {
+    display: none;
+  }
+
+  
+  #footer .footer-top .footer-links ul a {
+  margin: 5px auto;
+}
+
+
 
 .card-title a {
   color: #0f394c !important;
