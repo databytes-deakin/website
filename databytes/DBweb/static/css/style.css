@@ -1199,7 +1199,12 @@ section {
   color: #0f394c;
 }
 
+@media (max-width: 990px) {
 
+  .projects .col-lg-3.col-md-6 {
+    margin-bottom: 30px;
+  }
+}
 
 
 @media (max-width: 575px) {
@@ -1217,18 +1222,9 @@ section {
     width: 30px;
     height: 30px;
   }
-}
 
-@media (max-width: 420px) {
-  .footer-contact, .footer-links {
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  #footer .footer-top .social-links a {
-    width: 30px;
-    height: 30px;
+  .projects .col-lg-3.col-md-6 {
+    margin-bottom: 30px;
   }
 }
 
@@ -1251,6 +1247,11 @@ section {
   
   #footer .footer-top .footer-links ul a {
   margin: 5px auto;
+  }
+
+  .projects .col-lg-3.col-md-6 {
+    margin-bottom: 30px;
+  }
 }
 
 
