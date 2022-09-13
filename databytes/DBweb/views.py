@@ -19,7 +19,13 @@ def careers(request):
 
 def career(request, JobURL):
     job = Job.objects.filter(JobURL = JobURL).values()
-    template = 'career-details.html'
+    
+    template = '404.html'
+
+    for i in job: 
+        if i["JobURL"] == JobURL:
+            template = 'career-details.html'
+    
     context = {'job': job}
     return render(request, template, context)
 
@@ -37,7 +43,14 @@ def projects(request):
 
 def project(request, ProjectURL):
     project = Project.objects.filter(ProjectURL = ProjectURL).values()
-    template = 'project-details.html'
+
+    template = '404.html'
+
+    for i in project: 
+        print(i)
+        if i["ProjectURL"] == ProjectURL:
+            template = 'project-details.html'
+
     context = {'project': project}
     return render(request, template, context)
 
