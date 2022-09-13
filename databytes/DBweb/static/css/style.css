@@ -612,7 +612,7 @@ section {
 }
 .services .icon {
   position: absolute;
-  left: -10px;
+  left: 10px;
   top: calc(50% - 30px);
 }
 .services .icon i {
@@ -621,7 +621,7 @@ section {
   transition: 0.5s;
 }
 .services .title {
-  margin-left: 50px;
+  margin-left: 60px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
@@ -634,7 +634,7 @@ section {
 }
 .services .description {
   font-size: 14px;
-  margin-left: 50px;
+  margin-left: 60px;
   line-height: 24px;
   margin-bottom: 0;
 }
@@ -1198,12 +1198,63 @@ section {
   font-size: 13px;
   color: #0f394c;
 }
+
+@media (max-width: 990px) {
+
+  .projects .col-lg-3.col-md-6 {
+    margin-bottom: 30px;
+  }
+}
+
+
 @media (max-width: 575px) {
   #footer .copyright, #footer .credits {
     float: none;
     text-align: center;
   }
+
+  .footer-contact, .footer-links {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  #footer .footer-top .social-links a {
+    width: 30px;
+    height: 30px;
+  }
+
+  .projects .col-lg-3.col-md-6 {
+    margin-bottom: 30px;
+  }
 }
+
+@media (max-width: 419px) {
+  .footer-contact, .footer-links {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  #footer .footer-top .social-links a {
+    width: 30px;
+    height: 30px;
+  }
+
+  i.bx.bx-chevron-right {
+    display: none;
+  }
+
+  
+  #footer .footer-top .footer-links ul a {
+  margin: 5px auto;
+  }
+
+  .projects .col-lg-3.col-md-6 {
+    margin-bottom: 30px;
+  }
+}
+
+
 
 .card-title a {
   color: #0f394c !important;
