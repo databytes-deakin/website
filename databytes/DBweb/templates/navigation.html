@@ -8,12 +8,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link {% if request.path == '/' or request.path == '/index' %}active{% endif %}" href="{% url 'index' %}">Home</a></li>
-          <li><a class="nav-link {% if request.path == '/index#about' %}active{% endif %}" href="{% url 'index' %}#about">About</a></li>
-          <li><a class="nav-link {% if request.path == '/index#services' %}active{% endif %}" href="{% url 'index' %}#services">Services</a></li>
+          <li><a class="nav-link {% if request.path == '/' or request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link {% if request.path == '/#about' %}active{% endif %}" href="{% url 'index' %}#about">About</a></li>
+          <li><a class="nav-link {% if request.path == '/#services' %}active{% endif %}" href="{% url 'index' %}#services">Services</a></li>
           <li><a class="nav-link {% if request.path == '/projects' %}active{% endif %}" href="{% url 'projects' %}">Projects</a></li>
           <li><a class="nav-link {% if request.path == '/careers' %}active{% endif %}" href="{% url 'careers' %}">Careers</a></li>
-          <li><a class="nav-link {% if request.path == '/index#contact' %}active{% endif %}" href="{% url 'index' %}#contact">Contact</a></li>
+          <li><a class="nav-link {% if request.path == '/#contact' %}active{% endif %}" href="{% url 'index' %}#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

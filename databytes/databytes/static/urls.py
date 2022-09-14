@@ -20,7 +20,6 @@ from DBweb import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('index', views.index, name='index'),
     path('careers', views.careers, name='careers'),
     path('projects', views.projects, name='projects'),
     path('projects/<str:ProjectURL>', views.project, name='project'),
