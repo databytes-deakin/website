@@ -1204,8 +1204,7 @@ section {
   text-decoration: none;
 }
 #footer .copyright {
-  margin: auto;
-  text-align: center;
+  float: left;
   color: #0f394c;
 }
 #footer .credits {
@@ -1216,15 +1215,6 @@ section {
 
 @media (max-width: 990px) {
 
-  .row {
-    --bs-gutter-x: 1.5rem !important;
-    --bs-gutter-y: 1.5rem !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    margin-top: calc(-1 * var(--bs-gutter-y)) !important;
-    margin-right: calc(-.5 * var(--bs-gutter-x)) !important;
-    margin-left: calc(-.5 * var(--bs-gutter-x)) !important;
-  }
   .projects .col-lg-3.col-md-6 {
     margin-bottom: 30px;
   }
