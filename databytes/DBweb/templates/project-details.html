@@ -6,12 +6,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
     <title>{{ object.ProjectName }} | DataBytes</title>
+    {% load static %}
     <meta content="" name="description">
     <meta content="" name="keywords">
   
     <!-- Favicons -->
-    <link href="../static/img/favicon.png" rel="icon">
-    <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
   
     <!-- Google Fonts -->
     <link
@@ -19,14 +20,14 @@
       rel="stylesheet">
   
     <!-- Vendor CSS Files -->
-    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
   
     <!-- Template Main CSS File -->
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
   
     <!-- =======================================================
     * Template Name: Butterfly - v4.7.0
@@ -74,64 +75,57 @@
                     {% with i as project %}
                       {% if i.ProjectImage is not None %}
                         {% with p as proj %}
-                          <img src="../static/img/{{i.ProjectImage}}" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
+                          <img src="{% static '' %}img/{{ i.ProjectImage }}" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
                           {% endwith %}
                         
                         {% else %}
                           {% with p.parent as proj %}
-                            <img src="../static/img/tech_0{{i.ProjectID}}.jpg" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
+                            <img src="{% static '' %}img/tech_0{{i.ProjectID}}.jpg'" alt="{{i.ProjectName}}" width="100%" style="height:300px; object-fit: cover;">
                           {% endwith %}
                         {% endif %}
                       {% endwith %}
                   {% endif %}
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="https://www.techtarget.com/rms/onlineimages/code_g1019737194_searchsitetablet_520X173.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
-
               </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
           <!-- <div class="col-lg-2"></div> -->
-          <div class="col-lg-12">
-            <div class="portfolio-info">
-              
-              {% if i.ProjectIsActive == True %}
-                    {% with i as project %}
-                <h2>Project information</h2>
-                <ul>
-                  <li><strong>Category</strong>: {{i.ProjectName}}</li>
-                  <li><strong>Client</strong>: {{i.ProjectLeader}}</li>
-                  <li><strong>Client Email</strong>: {{i.LeaderEmail}}</li>
-                  <li><strong>Project start date</strong>: {{i.ProjectStartDate}}</li>
-                  {% if i.ProjectEndDate == '' %}
-                    {% with i as project %}
-                      <li><strong>Project end date</strong>: {{i.ProjectEndDate}}</li>
-                    {% endwith %}
-                  {% endif %}
-                  <li><strong>Project URL</strong>: <a href="#"> {{i.ProjectURL}}</a></li>
-                </ul>
-              
-            </div>
+          
+          <div class="col-lg-8">
             <div class="portfolio-description">
-              <h3> {{i.ProjectName}} Description</h3>
+              <h1> {{i.ProjectName}}</h1>
               <p>
                 {{i.ProjectDescription}}
               </p>
             </div>
-              {% endwith %}
-              
-            {% endif %}
           </div>
-
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              
+              {% if i.ProjectIsActive == True %}
+                    {% with i as project %}
+                <h4>Details</h4>
+                <ul>
+                  <li><strong>Title</strong>: {{i.ProjectName}}</li>
+                  <li><strong>Project Lead</strong>: {{i.ProjectLeader}}</li>
+                  <li><strong>Leader Email</strong>: {{i.LeaderEmail}}</li>
+                  <li><strong>Start Date</strong>: {{i.ProjectStartDate}}</li>
+                  {% if i.ProjectEndDate == '' %}
+                    {% with i as project %}
+                      <li><strong>End Date</strong>: {{i.ProjectEndDate}}</li>
+                    {% endwith %}
+                  {% endif %}
+                </ul>
+              
+            </div>
+          </div>
         </div>
+          
 
+        {% endwith %}
+        
+      {% endif %}
       </div>
     </section><!-- End Portfolio Details Section -->
     {% endfor %}
@@ -144,15 +138,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../static/vendor/purecounter/purecounter.js"></script>
-  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../static/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../static/js/main.js"></script>
+  {% include 'scripts.html' %}
 
 </body>
 

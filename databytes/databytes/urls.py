@@ -24,5 +24,6 @@ urlpatterns = [
     path('projects', views.projects, name='projects'),
     path('projects/<str:ProjectURL>', views.project, name='project'),
     path('careers/<str:JobURL>', views.career, name='career'),
+    path('error500', views.serverError, name='error500'),
     path('admin', admin.site.urls)
 ]

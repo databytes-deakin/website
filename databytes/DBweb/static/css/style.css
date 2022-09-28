@@ -25,6 +25,8 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  color: #272a2e;
 }
 
 /*--------------------------------------------------------------
@@ -273,7 +275,14 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 .error {
   text-align: center;
-  margin: 20em 0;
+  margin: 1em 0;
+}
+
+.error img {
+  margin: 2em 0;
+  height: 400px;
+  width: 80%;
+  object-fit: contain;
 }
 
 .error h1 {

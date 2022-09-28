@@ -8,6 +8,7 @@
 
 <body>
   {% include 'navigation.html' %}
+  {% load static %}
 
   <main id="main">
 
@@ -18,7 +19,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Projects</h2>
           <ol>
-            <li><a href="index">Home</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
             <li>Projects</li>
           </ol>
         </div>
@@ -44,7 +45,7 @@
                       <div class="card-header" style="  background-color:{% cycle '#ff7f506e' '#ffc10729' '#add8e629' '#90ee9029' %}"><h5 class="card-title"><a  href="/projects/{{i.ProjectURL}}">{{i.ProjectName}}</a></h5></div>
                       <div class="card-body">
                         
-                        <p class="card-text">{{i.ProjectDescription}}</p>
+                        <p class="card-text">{{i.ProjectShortDescription}}</p>
                       </div>
                     </div>
 
@@ -71,15 +72,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="static/vendor/purecounter/purecounter.js"></script>
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="static/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="static/js/main.js"></script>
+  {% include 'scripts.html' %}
 
 </body>
 

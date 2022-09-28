@@ -59,3 +59,6 @@ def projectDetails(request): # TEMPORARY FILE
     template = 'project-details.html'
     context = {'project': projectDetails}
     return render(request, template, context)
+
+def serverError(request):
+    return render(request, '500.html')
